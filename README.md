@@ -1,9 +1,8 @@
 Adaptive Improved Euler Method ODE Solver
-TLDR
+TLDR ON HOW TO USE:
+You will need to manually change the code to input the Differential Equation. The program takes in the x-coordinate you want to get to, the initial y-value, the initial x-value, the starting step size (h), and the desired tolerance for accuracy. 
+TLDR:
 A Python solution for a first-order ordinary differential equation (ODE) of the form y' = f(x, y). This script uses the Improved Euler method (also known as Heun's method), which is a second-order Runge-Kutta method, to approximate the solution.
-
-TLDR ON HOW TO USE
-You will need to manually change the code to input the Differential Equation. The program takes in the x-coordinate you want to get to, the initial y-value, the initial x-value, the starting step size (h), and the desired tolerance for accuracy.
 
 Features
 Improved Euler (Heun's) Method: Implements a second-order Runge-Kutta method for a more accurate approximation than the standard Euler method.
