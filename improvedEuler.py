@@ -1,9 +1,11 @@
 from math import *
 
-xfinal = float(input("Enter the final x: ")) 
+xfinal = float(input("Enter x: ")) 
 h = float(input("Enter the starting step size: ")) 
 y0 = float(input("Enter y0: "))
 x0 = float(input("Enter x0: "))
+tolerance = float(input("Enter the number of decimal places you want it to be accurate to: "))
+tolerance = 10**-tolerance
 y = y0
 x = x0
 k1 = 0.00
@@ -13,13 +15,14 @@ tempy = 0.00
 second2lastY = -999.67
 
 def func(x, y):
-    return x + (0.5 * (y**2))
+    return x**2 + y**2 -1
 
-while (round(second2lastY, 4) != round(y, 4)):
+while (abs(y - second2lastY) > tolerance):
     second2lastY = y
     x = x0
     y = y0
-    while (x < xfinal):
+    num_steps = int((xfinal - x0) / h)
+    for _ in range(num_steps):
         k1 = func(x, y)
         tempy = y + h*k1
         k2 = func(x+h, tempy)
@@ -28,4 +31,4 @@ while (round(second2lastY, 4) != round(y, 4)):
         x += h
     h = h /10
 
-print(f"x: {x}, y: {y}, step: {h}")
+print(f"x: {x}, y: {y}, \nStoped at step: {h}")
